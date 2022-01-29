@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# DB 設計
 
-Things you may want to cover:
+## users_table
 
-* Ruby version
+| Column              | Type   | Options                   |
+| -------------------------------------------------------- |
+| email               | string | null: false, unique: true |
+| encrypted_ password | string | null: false               |
+| nickname            | string | null: false               |
 
-* System dependencies
+### Association
+- has_many :room_users
+-  has_many :rooms, through: :room_users
+- has_many :memos
 
-* Configuration
+## rooms_table
 
-* Database creation
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
-* Database initialization
+### Association
+- has_many :room_users
+- has_many :users, through: :room_users
+- has_many :memos
 
-* How to run the test suite
+## room_users table
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :room
+- belongs_to :user
+
+## memos_table
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| item    | string     | null:false                     |
+| info    | text       |                                |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :user
+
+## comments_table
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| memo    | references | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
