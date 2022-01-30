@@ -1,9 +1,27 @@
-<%= render "share/header" %>
+<div class= "top-wrapper">
+  <div class= "logo">
+  <%= link_to image_tag("logo.png", class:"icon"), "#" %>    
+  </div>
+  <div class="nav">
+    <div class="set-room">
+    <%= link_to "Roomを作る", "#", class:"room-btn" %>
+    </div>
+    <ul class='lists'>
+      <%# if user_signed_in? %>
+      <%#<li><%= link_to current_user.name, "#", class: "user-nickname" </li> %>
+      <%#<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" </li>%>
+      <%# else %>
+      <li><%= link_to 'ログイン', "#", class: "login sign-set" %></li>
+      <li><%= link_to '新規登録', "#", class: "sign-up sign-set" %></li>
+      <%# end %>
+    </ul>
+  </div>
+</div>
 <div class="wrapper">
   <div class="side-bar">
-    <%= render "share/side_bar" %>
+    <%= render "side_bar" %>
   </div>
   <div class="memo">
-    <%= render "share/memo" %>
+    <%= render "memo" %>
   </div>
 </div>

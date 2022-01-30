@@ -1,14 +1,22 @@
 .wrapper {
+  background-color: rgb(241, 9, 9);
   display: flex;
-  justify-content: space-between;
 }
 
-/*/ヘッダー部分/*/
+/*/トップ部分/*/
 
-.header {
-  background-color: #f1f8fe;
-  margin-bottom: 48px;
-  padding: 20px 0;
+.top-wrapper{
+  background-color: #454C59;
+  padding: 0 20px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 80px;
 }
 
 .nav {
@@ -17,18 +25,15 @@
   justify-content: space-between;
 }
 
-.icon {
-  width: 200px;
-}
-
 .room-btn {
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
+  font-size: 15px;
+  color: white;
+  background-color: #BF946F;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #BF946F solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -37,7 +42,7 @@
   background: #87CEFA;
 }
 .nav__logout{
-  display: inline-block;
+
   padding: 0.4em 1.6em;
   font-size: 0.8em;
   color: #87CEFA;
@@ -48,14 +53,39 @@
   opacity: 0.5;
 }
 
+.lists {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4em 1.6em;
+  background-color: #BF946F;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.login {
+  margin-right: 20px;
+}
+.user-nickname{
+ margin-right: 20px;
+}
+
+.sign-set{
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+}
+
 /*/サイドバー /*/
 .side-bar {
-  background-color: #fdd496;
-
+  background-color: #BF946F ;
+  width: 200px;
+  height: 100vh;
+  border-right: 5px #454C59 solid;
 }
 
 /*/メモ部分 /*/
 .memo {
-  background-color: #FFEBCD;
-
+  background-color: #F2D6A2;
+  width: calc(100vh - 200px);
+  height: 100vh
 }
