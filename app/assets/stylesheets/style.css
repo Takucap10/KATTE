@@ -89,3 +89,47 @@
   width: calc(100vh - 200px);
   height: 100vh
 }
+
+/*/ アカウント部分 /*/
+.account-page {
+  background-color: #454C59;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.account-inner {
+  padding: 30px;
+  width: 70%;
+  height: 70%;
+}
+
+.account-title {
+  background-color: #F2D6A2;
+  height: 40px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.account-form {
+  background-color: #F2D6A2;
+  margin: 20px 0;
+  padding: 10px 30px;
+}
+
+.field {
+  margin: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 15px;
+  color: white#BF946F;
+  background-color: white;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #BF946F solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
