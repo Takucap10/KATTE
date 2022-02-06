@@ -81,13 +81,15 @@
   width: 200px;
   height: 100vh;
   border-right: 5px #454C59 solid;
+  padding: 10px;
 }
 
 /*/メモ部分 /*/
 .memo {
   background-color: #F2D6A2;
-  width: calc(100vh - 200px);
-  height: 100vh
+  width: 100vh;
+  height: 100vh;
+  padding: 10px;
 }
 
 /*/ アカウント部分 /*/
