@@ -4,7 +4,7 @@
   </div>
   <div class="nav">
     <div class="set-room">
-    <%= link_to "Roomを作る", "#", class:"room-btn" %>
+    <%= link_to "Roomを作る", new_room_path, class:"room-btn" %>
     </div>
     <ul class='lists'>
       <% if user_signed_in? %>
