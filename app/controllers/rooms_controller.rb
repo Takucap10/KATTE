@@ -28,11 +28,8 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    if @room.destroy
+    @room.destroy
     redirect_to root_path
-    else
-    render :index
-    end
   end
 
   private
