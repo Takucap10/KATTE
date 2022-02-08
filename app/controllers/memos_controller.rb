@@ -2,7 +2,7 @@ class MemosController < ApplicationController
     before_action :set_room
 
   def index
-    @memos = Memo.order('created_at ASC')
+    @memos = @room.memos.order('created_at ASC')
   end
 
   def new

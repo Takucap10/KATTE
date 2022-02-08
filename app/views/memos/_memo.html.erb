@@ -1,4 +1,5 @@
 <%= link_to "メモを作成する", new_room_memo_path(@room),class: "memo-maker" %>
+<%= "現在のルーム|#{@room.name}|"  %>
 
 <% @memos.each do |memo|%>
 <div class="memo-container">
