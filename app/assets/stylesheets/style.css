@@ -104,11 +104,19 @@
   padding: 10px;
 }
 
+.memo-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0 10px 10px;
+  margin-bottom:30px ;
+}
+
 .memo-text {
   height: 200px;
   width: 80%;
 }
-.memo-maker{
+
+.room-btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 15px;
@@ -123,16 +131,34 @@
 }
 .memo-container {
   background-color: #FFF;
-  margin-bottom:15px ;
+
 }
-.memo-list {
+.first-list {
   display: flex;
   justify-content: start;
+  background-color: lightskyblue;
+}
+.second-list {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 15px ;
 }
 .memos {
   padding: 1px 4px;
   border: 1px black solid;
   margin:1px ;
+}
+.memo-user {
+  width: 25%;
+}
+.memo-time {
+  width: 75%;
+}
+.memo-item {
+  width: 25%;
+}
+.memo-info {
+  width: 75%;
 }
 
 /*/ フォーム関係 /*/
@@ -185,6 +211,13 @@
   height: 100vh;
   display: flex;
   align-items: center;
+}
+.room-current {
+  font-size: 25px;
+}
+
+.room-navi {
+  display: inline-block;
 }
 
 .room-inner {

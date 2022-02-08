@@ -1,21 +1,31 @@
-<%= link_to "メモを作成する", new_room_memo_path(@room),class: "memo-maker" %>
-<%= "現在のルーム|#{@room.name}|"  %>
+<div class="memo-top">
+  <%= link_to "メモを作成する", new_room_memo_path(@room),class: "room-btn" %>
+  <div class= "room-current">
+    <%= "現在のルーム【#{@room.name}】" %>
+  </div>
+  <div class= room-navi>
+    <%= link_to "ルーム編集", edit_room_path(@room),class: "room-edit room-btn" %>
+    <%= link_to "ルーム削除", room_path(@room),class: "room-edit room-btn",method: :delete %>
+  </div>
+</div>
 
 <% @memos.each do |memo|%>
 <div class="memo-container">
-  <div class="memo-list">
+  <div class="first-list">
     <div class="memo-user memos">
       <%= memo.user.nickname %>
     </div>
-    <div class="memo-create memos">
+    <div class="memo-time memos">
       <%= l memo.created_at %>
     </div>
-    <div class="memo-item memos">
-      <%= memo.item %>
-    </div>
   </div>
-  <div class="memo-info memos">
-    <%= memo.info %>
+  <div class="second-list">
+    <div class="memo-item memos">
+      <%= "アイテム：#{memo.item}" %>
+    </div>
+    <div class="memo-info memos">
+      <%= memo.info %>
+    </div>
   </div>
 </div>
 <% end %>
