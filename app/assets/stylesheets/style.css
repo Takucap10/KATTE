@@ -101,6 +101,11 @@
   padding: 10px;
 }
 
+.memo-text {
+  height: 200px;
+  width: 80%;
+}
+
 /*/ フォーム関係 /*/
 .account-page {
   background-color: #454C59;
@@ -173,7 +178,7 @@
 }
 
 .room-text {
-  width: 300px;
+  width: 80%;
 }
 
 .room-field {

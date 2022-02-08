@@ -15,8 +15,12 @@ ActiveRecord::Schema.define(version: 2022_02_06_060806) do
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "item", null: false
     t.text "info", null: false
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_memos_on_room_id"
+    t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
   create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -47,6 +51,8 @@ ActiveRecord::Schema.define(version: 2022_02_06_060806) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "memos", "rooms"
+  add_foreign_key "memos", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
 end

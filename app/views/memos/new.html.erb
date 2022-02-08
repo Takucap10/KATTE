@@ -4,18 +4,22 @@
        <h2>新規メモの作成</h2>
     </div>
     <div class= "room-form">
-      <%= form_with model: @room_memo, local: true do |f|%>
+      <%= form_with model: [@room,@memo], local: true do |f|%>
         <div class="room-field">
           <%= f.label :買ってきてほしいもの %>
-          <%= f.text_field :item,class: "room-text", placeholder: "商品名などを入れてください" %>
+            <div class="memo-box">
+              <%= f.text_field :item,class: "room-text", placeholder: "商品名などを入れてください" %>
+            </div>
         </div>
         <div class="room-field">
           <%= f.label :詳細 %>
-          <%= f.text_field :info,class: "room-text", placeholder: "型番など詳細を入れてください" %>
+          <div class="memo-box">
+            <%= f.text_field :info,class: "memo-text", placeholder: "型番など詳細を入れてください" %>
+          </div>
         </div>
     </div>
       <div class= "action">
-        <%= f.submit class: 'btn'%>
+        <%= f.submit 'メモ作成', class: 'btn'%>
       </div>
       <% end %>
   </div>

@@ -1,5 +1,1 @@
-<% unless @memos.empty? %>
-  <%# @memos.each do |memo| %>
-<% else %>
-  <%= link_to "商品を出品する", new_room_memo_path %>
-<% end %>
+<%= link_to "メモを作成する", new_room_memo_path(@room) %>
