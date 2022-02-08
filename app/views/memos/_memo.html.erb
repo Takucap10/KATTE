@@ -1,15 +1,17 @@
-<%= link_to "メモを作成する", new_room_memo_path(@room) %>
+<%= link_to "メモを作成する", new_room_memo_path(@room),class: "memo-maker" %>
 
 <% @memos.each do |memo|%>
 <div class="memo-container">
-  <div class="memo-user memos">
-    <%= memo.user.nickname %>
-  </div>
-  <div class="memo-create memos">
-    <%= memo.created_at %>
-  </div>
-  <div class="memo-item memos">
-    <%= memo.item %>
+  <div class="memo-list">
+    <div class="memo-user memos">
+      <%= memo.user.nickname %>
+    </div>
+    <div class="memo-create memos">
+      <%= l memo.created_at %>
+    </div>
+    <div class="memo-item memos">
+      <%= memo.item %>
+    </div>
   </div>
   <div class="memo-info memos">
     <%= memo.info %>
