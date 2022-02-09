@@ -1,5 +1,6 @@
 class MemosController < ApplicationController
     before_action :set_room
+    before_action :set_memo, only: [:edit, :update, :destroy]
 
   def index
     @memos = @room.memos.order('created_at ASC')
@@ -17,6 +18,22 @@ class MemosController < ApplicationController
       render :new
     end
   end
+
+  def edit
+  end
+
+  def update
+    if @memo.update(memo_params)
+    redirect_to root_path
+    else
+    render :edit
+    end
+  end
+
+  def destroy
+    @room.destroy
+    redirect_to root_path
+  end
   
   private
   def memo_params
@@ -26,4 +43,9 @@ class MemosController < ApplicationController
   def set_room
     @room = Room.find(params[:room_id])
   end
+
+  def set_memo
+    @memo = @room.memos.find(params[:id])
+  end
+
 end

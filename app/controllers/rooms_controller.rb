@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
     if @room.update(room_params)
     redirect_to root_path
     else
-    render :new
+    render :edit
     end
   end
 

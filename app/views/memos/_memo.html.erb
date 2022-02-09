@@ -11,6 +11,12 @@
 
 <% @memos.each do |memo|%>
 <div class="memo-container">
+  <div class="buy">
+    購入者：
+    <% @room.users.each do |user|%>
+    <label><input type="checkbox"><%= user.nickname %></label>
+    <% end %>
+  </div>
   <div class="first-list">
     <div class="memo-user memos">
       <%= memo.user.nickname %>
@@ -18,6 +24,8 @@
     <div class="memo-time memos">
       <%= l memo.created_at %>
     </div>
+    <%#= link_to "編集", edit_room_memo_path(memo),class: "memo-edit btn" %>
+    <%#= link_to "削除", memo_path,class: "memo-delete btn",method: :delete %>
   </div>
   <div class="second-list">
     <div class="memo-item memos">
