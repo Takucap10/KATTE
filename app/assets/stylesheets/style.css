@@ -132,8 +132,15 @@
 }
 .memo-container {
   background-color: #FFF;
-
 }
+.buy {
+  display: flex;
+}
+.buy-name {
+  padding: 0 5px;
+}
+
+
 .first-list {
   display: flex;
   justify-content: start;

@@ -14,7 +14,9 @@
   <div class="buy">
     購入者：
     <% @room.users.each do |user|%>
+    <div class="buy-name">
     <label><input type="checkbox"><%= user.nickname %></label>
+    </div>
     <% end %>
   </div>
   <div class="first-list">

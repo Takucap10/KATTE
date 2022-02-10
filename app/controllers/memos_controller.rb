@@ -6,6 +6,9 @@ class MemosController < ApplicationController
     @memos = @room.memos.order('created_at ASC')
   end
 
+  def index2
+  end
+
   def new
     @memo = @room.memos.new
   end
@@ -13,7 +16,7 @@ class MemosController < ApplicationController
   def create
     @memo = @room.memos.new(memo_params)
     if @memo.save
-      redirect_to root_path
+      redirect_to room_memos_path(@room)
     else 
       render :new
     end
