@@ -100,7 +100,7 @@
 /*/メモ部分 /*/
 .memo {
   background-color: #F2D6A2;
-  width: 100vh;
+  width: calc(100% - 200px);
   height: 100vh;
   padding: 10px;
 }
@@ -137,7 +137,7 @@
   display: flex;
 }
 .buy-name {
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 
@@ -253,6 +253,9 @@
 
 .room-field {
   margin: 20px;
+}
+room[user_ids][]{
+  display: flex;
 }
 
 .btn {
