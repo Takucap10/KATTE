@@ -1,1 +1,41 @@
-<h1>メモが入ります</h1>
+<div class="memo-top">
+  <%= link_to "メモを作成する", new_room_memo_path(@room),class: "room-btn" %>
+  <div class= "room-current">
+    <%= "ルーム名【#{@room.name}】" %>
+  </div>
+  <div class= room-navi>
+    <%= link_to "ルーム編集", edit_room_path(@room),class: "room-edit room-btn" %>
+    <%= link_to "ルーム削除", room_path(@room),class: "room-delete room-btn",method: :delete %>
+  </div>
+</div>
+
+<% @memos.each do |memo|%>
+<div class="memo-container">
+  <div class="buy">
+    購入者：
+    <% @room.users.each do |user|%>
+    <div class="buy-name">
+    <label><input type="checkbox"><%= user.nickname %></label>
+    </div>
+    <% end %>
+  </div>
+  <div class="first-list">
+    <div class="memo-user memos">
+      <%= memo.user.nickname %>
+    </div>
+    <div class="memo-time memos">
+      <%= l memo.created_at %>
+    </div>
+    <%#= link_to "編集", edit_room_memo_path(memo),class: "memo-edit btn" %>
+    <%#= link_to "削除", memo_path,class: "memo-delete btn",method: :delete %>
+  </div>
+  <div class="second-list">
+    <div class="memo-item memos">
+      <%= "アイテム：#{memo.item}" %>
+    </div>
+    <div class="memo-info memos">
+      <%= memo.info %>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -9,7 +9,7 @@
 
       <div class="field">
         <%= f.label :nickname %><br />
-        <%= f.text_field :nickname, autofocus: true %>
+        <%= f.text_field :nickname, autofocus: "off" %>
       </div>
 
       <div class="field">
@@ -20,7 +20,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上</em>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
