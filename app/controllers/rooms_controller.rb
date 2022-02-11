@@ -21,9 +21,9 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-    redirect_to root_path
+      redirect_to root_path
     else
-    render :edit
+      render :edit
     end
   end
 
@@ -33,8 +33,9 @@ class RoomsController < ApplicationController
   end
 
   private
+
   def room_params
-    params.require(:room).permit(:name, user_ids:[])
+    params.require(:room).permit(:name, user_ids: [])
   end
 
   def set_item

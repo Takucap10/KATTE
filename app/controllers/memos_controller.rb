@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
-    before_action :set_room
-    before_action :set_memo, only: [:edit, :update, :destroy]
+  before_action :set_room
+  before_action :set_memo, only: [:edit, :update, :destroy]
 
   def index
     @memos = @room.memos.order('created_at ASC')
@@ -17,7 +17,7 @@ class MemosController < ApplicationController
     @memo = @room.memos.new(memo_params)
     if @memo.save
       redirect_to room_memos_path(@room)
-    else 
+    else
       render :new
     end
   end
@@ -27,9 +27,9 @@ class MemosController < ApplicationController
 
   def update
     if @memo.update(memo_params)
-    redirect_to root_path
+      redirect_to root_path
     else
-    render :edit
+      render :edit
     end
   end
 
@@ -37,8 +37,9 @@ class MemosController < ApplicationController
     @room.destroy
     redirect_to root_path
   end
-  
+
   private
+
   def memo_params
     params.require(:memo).permit(:item, :info).merge(user_id: current_user.id)
   end
@@ -50,5 +51,4 @@ class MemosController < ApplicationController
   def set_memo
     @memo = @room.memos.find(params[:id])
   end
-
 end
