@@ -254,9 +254,6 @@
 .room-field {
   margin: 20px;
 }
-room[user_ids][]{
-  display: flex;
-}
 
 .btn {
   display: inline-block;
