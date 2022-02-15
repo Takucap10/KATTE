@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      redirect_to root_path
+      redirect_to room_memos_path(@room)
     else
       render :edit
     end
